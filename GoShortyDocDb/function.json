@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "route": "go-docdb/{shortid}",
+      "methods": [
+        "get"
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "shorty",
+      "databaseName": "Shorty",
+      "collectionName": "urlshorties",
+      "id": "{shortid}",
+      "connection": "AzureWebJobsDocumentDBConnectionString",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}

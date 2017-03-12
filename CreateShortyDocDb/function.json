@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "client",
+      "databaseName": "Shorty",
+      "collectionName": "urlshorties",
+      "createIfNotExists": false,
+      "connection": "AzureWebJobsDocumentDBConnectionString",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

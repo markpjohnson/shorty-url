@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "route": "go/{hash}",
+      "methods": [
+        "get"
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "table",
+      "name": "shorty",
+      "tableName": "urlshorties",
+      "partitionKey": "prod",
+      "rowKey": "{hash}",
+      "connection": "shorty_STORAGE",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
